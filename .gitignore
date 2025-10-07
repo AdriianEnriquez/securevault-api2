@@ -1,0 +1,13 @@
+# .gitignore
+
+# Dependencias de Node
+/node_modules
+
+# Archivos de entorno y secretos (¡NUNCA SUBIR!)
+.env
+
+# Logs
+*.log
+
+# Visual Studio Code
+.vscode/
