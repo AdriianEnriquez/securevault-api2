@@ -11,11 +11,11 @@ const sendTokenResponse = (user, statusCode, res) => {
     
     // Opciones de la Cookie para Seguridad:
     const options = {
-        // Calcula la fecha de expiración basada en la variable de entorno (ej. 30 días)
+        
         expires: new Date(Date.now() + process.env.JWT_EXPIRE.replace('d', '') * 24 * 60 * 60 * 1000), 
-        httpOnly: true, // 🚨 CLAVE: Impide el acceso del lado del cliente (Anti-XSS)
-        secure: process.env.NODE_ENV === 'production', // Solo se envía en HTTPS (Recomendado para AWS)
-        sameSite: 'strict', // Protección CSRF
+        httpOnly: true, 
+        secure: false, 
+        sameSite: 'lax', 
     };
 
     // 1. Establecer la cookie 'token'
